@@ -50,4 +50,6 @@ let array3 = generateArray()
 // algorithm that you like in a language that you are familiar with and then
 // translate it to Swift. Resist the temptation to find a sort online that
 // is already written in swift. Do not use Swift's sort method.
-let array4 = generateArray()
+//
+// Note that array4 is declared with var, so that it is a mutable array.
+var array4 = generateArray()
