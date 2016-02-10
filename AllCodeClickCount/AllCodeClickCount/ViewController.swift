@@ -10,59 +10,53 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    var clickCount = 0
     var label: UILabel!
-    var count = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        print("Orange. viewWillAppear.")
-    }
-    
-    override func loadView() {
-        super.loadView()
         
         // Some Math, to center the label and button
         let screenWidth = view.bounds.size.width
         let width: CGFloat = 100
-        let height: CGFloat = 44
         let x = (screenWidth - width) / 2
+
+        // Create frame rectangles for button and label
+        let labelFrame = CGRect(x: x, y: 100, width: width, height: 100)
+        let buttonFrame = CGRect(x: x, y: 250, width: width, height: 44)
+        let buttonFrame2 = CGRect(x: x, y: 350, width: width, height: 44)
         
-        // Create two CGRects, to specify where the label and button should be on the screen
-        // (Next week will will do this with Storyboard
-        let labelFrame = CGRect(x: x, y: 150, width: width, height: height)
-        let buttonFrame = CGRect(x: x, y: 250, width: width, height: height)
-        
-        // Make the label
+        // Make a label
         label = UILabel(frame: labelFrame)
+        label.text = "0"
         label.textAlignment = .Center
-        label.font = UIFont.systemFontOfSize(36)
-        
-        // Make the button
-        let button = UIButton(type: .System)
-        button.setTitle("Increment", forState: .Normal)
-        button.frame = buttonFrame
-        button.addTarget(self, action: "incrementCount", forControlEvents: .TouchDown)
-        
-        // Add the label and the button to the view
+        label.font = UIFont.systemFontOfSize(64)
         view.addSubview(label)
-        view.addSubview(button)
         
-        // A helper method. Puts the count in the label.
-        displayCountInLabel()
+        // Make a button
+        let button = UIButton(type: .System)
+        button.frame = buttonFrame
+        button.setTitle("Increment", forState: .Normal)
+        button.addTarget(self, action: "incrementCount:", forControlEvents: .TouchDown)
+        view.addSubview(button)
+
+        // Make a button
+        let button2 = UIButton(type: .System)
+        button2.frame = buttonFrame2
+        button2.setTitle("Decrement", forState: .Normal)
+        button2.addTarget(self, action: "decrementCount:", forControlEvents: .TouchDown)
+        
+        view.addSubview(button2)
     }
     
-    func incrementCount() {
-        count++
-        displayCountInLabel()
+    func decrementCount(sender: UIButton) {
+        clickCount--
+        label.text = "\(clickCount)"
     }
     
-    func displayCountInLabel() {
-        label.text = "\(count)"
+    func incrementCount(sender: UIButton) {
+        clickCount++
+        label.text = "\(clickCount)"
     }
 }
 
