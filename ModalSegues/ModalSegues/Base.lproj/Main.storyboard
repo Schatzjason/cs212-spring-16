@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <scenes>
+        <!--Percentage View Controller-->
+        <scene sceneID="rCI-8C-5tV">
+            <objects>
+                <viewController storyboardIdentifier="PercentageViewController" id="z6s-Ea-ARk" customClass="PercentageViewController" customModule="ModalSegues" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2GY-wM-JSh"/>
+                        <viewControllerLayoutGuide type="bottom" id="AWW-16-Tva"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UNt-6e-ADc">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jqU-ow-2fP">
+                                <rect key="frame" x="262" y="282" width="76" height="37"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DSe-j1-0es">
+                                <rect key="frame" x="277" y="364" width="47" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Okay">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="dismissMyself:" destination="z6s-Ea-ARk" eventType="touchDown" id="IIe-8n-PIT"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.40000000596046448" green="0.40000000596046448" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="jqU-ow-2fP" firstAttribute="centerY" secondItem="UNt-6e-ADc" secondAttribute="centerY" id="CU8-n6-ThJ"/>
+                            <constraint firstItem="jqU-ow-2fP" firstAttribute="centerX" secondItem="UNt-6e-ADc" secondAttribute="centerX" id="bmT-h0-xkw"/>
+                            <constraint firstItem="DSe-j1-0es" firstAttribute="centerX" secondItem="UNt-6e-ADc" secondAttribute="centerX" id="iGP-bF-MXn"/>
+                            <constraint firstItem="DSe-j1-0es" firstAttribute="top" secondItem="jqU-ow-2fP" secondAttribute="top" constant="82" id="waN-au-CEk"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="label" destination="jqU-ow-2fP" id="G6p-DC-hem"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5SW-bs-Hfg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1201" y="263"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ModalSegues" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="IfV-sU-6eQ">
+                                <rect key="frame" x="248" y="285" width="104" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="64E-at-uFq"/>
+                                    <constraint firstAttribute="width" constant="100" id="mSF-9p-YPc"/>
+                                </constraints>
+                            </slider>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lIq-A4-hWJ">
+                                <rect key="frame" x="285" y="380" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="94p-IB-fMJ"/>
+                                    <constraint firstAttribute="width" constant="30" id="fi4-Q5-xaA"/>
+                                </constraints>
+                                <state key="normal" title="Go"/>
+                                <connections>
+                                    <segue destination="z6s-Ea-ARk" kind="presentation" id="xWR-IV-6NU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X2G-nl-ZKE">
+                                <rect key="frame" x="284" y="452" width="33" height="30"/>
+                                <state key="normal" title="Go 2"/>
+                                <connections>
+                                    <action selector="go2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jot-3c-iTQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P9L-9F-jte">
+                                <rect key="frame" x="284" y="525" width="33" height="30"/>
+                                <state key="normal" title="Go 3"/>
+                                <connections>
+                                    <action selector="go2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HvI-ik-Bb7"/>
+                                    <action selector="go3:" destination="BYZ-38-t0r" eventType="touchUpInside" id="y2h-Ns-Yft"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="X2G-nl-ZKE" firstAttribute="top" secondItem="lIq-A4-hWJ" secondAttribute="bottom" constant="42" id="5k0-bd-3Kq"/>
+                            <constraint firstItem="P9L-9F-jte" firstAttribute="top" secondItem="X2G-nl-ZKE" secondAttribute="bottom" constant="43" id="DB8-5F-b9C"/>
+                            <constraint firstItem="X2G-nl-ZKE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Jgh-bq-Swc"/>
+                            <constraint firstItem="lIq-A4-hWJ" firstAttribute="top" secondItem="IfV-sU-6eQ" secondAttribute="bottom" constant="65" id="ld8-JX-TSI"/>
+                            <constraint firstItem="IfV-sU-6eQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="svV-gZ-AOq"/>
+                            <constraint firstItem="P9L-9F-jte" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tAA-7t-VBu"/>
+                            <constraint firstItem="lIq-A4-hWJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yWw-km-8Wt"/>
+                            <constraint firstItem="IfV-sU-6eQ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="z5f-MR-Dty"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="slider" destination="IfV-sU-6eQ" id="pbR-hJ-bR3"/>
+                        <segue destination="z6s-Ea-ARk" kind="presentation" identifier="go-2" id="HTT-JJ-dKC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="HTT-JJ-dKC"/>
+    </inferredMetricsTieBreakers>
+</document>
