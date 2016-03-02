@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXL-64-Ud3">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="WWe-gz-vve">
+            <objects>
+                <navigationController id="vXL-64-Ud3" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="UBg-PI-iO6">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="P52-9R-jNO" kind="relationship" relationship="rootViewController" id="gqs-N3-Wrl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D1O-TR-ds6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-206" y="291"/>
+        </scene>
+        <!--Results View Controller-->
+        <scene sceneID="L6A-9r-5gE">
+            <objects>
+                <viewController storyboardIdentifier="ResultsViewController" id="TLn-9d-2yp" customClass="ResultsViewController" customModule="RPS_Navigation" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Voe-yu-aOn"/>
+                        <viewControllerLayoutGuide type="bottom" id="dGC-7e-D9r"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bh-Yc-6fi">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nOa-Pb-HAQ">
+                                <rect key="frame" x="133" y="289" width="335" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nOa-Pb-HAQ" firstAttribute="centerX" secondItem="8bh-Yc-6fi" secondAttribute="centerX" id="K3P-0R-N4u"/>
+                            <constraint firstItem="nOa-Pb-HAQ" firstAttribute="centerY" secondItem="8bh-Yc-6fi" secondAttribute="centerY" id="wr3-xw-16P"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="label" destination="nOa-Pb-HAQ" id="gY6-jm-OlE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pel-w1-Co5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1172" y="296"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="cDz-uh-kgC">
+            <objects>
+                <viewController id="P52-9R-jNO" customClass="ViewController" customModule="RPS_Navigation" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lg7-vq-XRp"/>
+                        <viewControllerLayoutGuide type="bottom" id="g1P-Xq-56E"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="EdI-J7-4HQ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5UV-bg-3cJ">
+                                <rect key="frame" x="271" y="323" width="58" height="30"/>
+                                <state key="normal" title="Scissors"/>
+                                <connections>
+                                    <action selector="throwTheScissors" destination="P52-9R-jNO" eventType="touchDown" id="ce0-GM-9Nu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eUL-jF-UAr">
+                                <rect key="frame" x="282" y="245" width="35" height="30"/>
+                                <state key="normal" title="Rock"/>
+                                <connections>
+                                    <action selector="throwTheRock:" destination="P52-9R-jNO" eventType="touchDown" id="srQ-ky-8dq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jVv-4r-ojN">
+                                <rect key="frame" x="280" y="285" width="40" height="30"/>
+                                <state key="normal" title="Paper"/>
+                                <connections>
+                                    <segue destination="TLn-9d-2yp" kind="show" identifier="Paper" id="1xg-8j-TPc"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.5712272987" blue="0.13172630560000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="eUL-jF-UAr" firstAttribute="centerX" secondItem="EdI-J7-4HQ" secondAttribute="centerX" id="6jY-DQ-u0k"/>
+                            <constraint firstItem="5UV-bg-3cJ" firstAttribute="top" secondItem="jVv-4r-ojN" secondAttribute="bottom" constant="8" id="TiM-Ho-ZaI"/>
+                            <constraint firstItem="jVv-4r-ojN" firstAttribute="centerX" secondItem="EdI-J7-4HQ" secondAttribute="centerX" id="X42-t4-9PC"/>
+                            <constraint firstItem="jVv-4r-ojN" firstAttribute="centerY" secondItem="EdI-J7-4HQ" secondAttribute="centerY" id="ZaR-Zt-OKr"/>
+                            <constraint firstItem="5UV-bg-3cJ" firstAttribute="centerX" secondItem="EdI-J7-4HQ" secondAttribute="centerX" id="f3u-YG-EKV"/>
+                            <constraint firstItem="eUL-jF-UAr" firstAttribute="top" secondItem="lg7-vq-XRp" secondAttribute="bottom" constant="181" id="jr5-Zy-3Zm"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="zYI-dd-n4E"/>
+                    <connections>
+                        <segue destination="TLn-9d-2yp" kind="show" identifier="Scissors" id="QHO-GW-Ra2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A9w-sn-l5c" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="492" y="291"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="1xg-8j-TPc"/>
+    </inferredMetricsTieBreakers>
+</document>
