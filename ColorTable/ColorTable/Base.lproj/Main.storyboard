@@ -51,21 +51,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ColorCell1" id="z1d-bJ-2L8" customClass="ColorTableViewCell" customModule="ColorTable" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ColorCell1" id="ORs-gQ-4DQ" customClass="ColorTableViewCell" customModule="ColorTable" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="86" width="600" height="92"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="z1d-bJ-2L8" id="YXQ-ML-bgW">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ORs-gQ-4DQ" id="Kle-i4-661">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="91"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q63-VW-Jzb">
-                                            <rect key="frame" x="29" y="13" width="64" height="56"/>
-                                            <color key="backgroundColor" red="0.22864794040394076" green="1" blue="0.24087435868962082" alpha="1" colorSpace="calibratedRGB"/>
+                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gx0-jI-iZm">
+                                            <rect key="frame" x="8" y="32" width="149" height="27"/>
+                                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         </view>
                                     </subviews>
+                                    <color key="tintColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="colorView" destination="Q63-VW-Jzb" id="8Pf-Hz-yQf"/>
+                                    <outlet property="colorView" destination="gx0-jI-iZm" id="DlF-pf-DMl"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -77,7 +78,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Colors" id="Zdf-7t-Un8"/>
                     <connections>
-                        <segue destination="JEX-9P-axG" kind="showDetail" id="gKD-Xx-Gss"/>
+                        <segue destination="JEX-9P-axG" kind="show" identifier="ShowColor" id="f60-tk-TfY"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>

@@ -45,15 +45,14 @@ class ColorTableViewController: UITableViewController {
     // MARK: - Segues
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "showDetail" {
+        if segue.identifier == "ShowColor" {
             if let indexPath = self.tableView.indexPathForSelectedRow {
-                let controller = (segue.destinationViewController as! UINavigationController).topViewController as! DetailViewController
+                
+                let controller = segue.destinationViewController as! DetailViewController
                 let colorName = colorNames[indexPath.row]
                 let color = colors[colorName]
                 
                 controller.color = color
-                controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
-                controller.navigationItem.leftItemsSupplementBackButton = true
             }
         }
     }
@@ -70,14 +69,19 @@ class ColorTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("ColorCell2", forIndexPath: indexPath)
-        let colorCell = cell as! ColorTableViewCell2
+        let cell = tableView.dequeueReusableCellWithIdentifier("ColorCell1", forIndexPath: indexPath)
+        let colorCell = cell as! ColorTableViewCell
         
         let colorName = colorNames[indexPath.row]
 
         colorCell.colorView.backgroundColor = colors[colorName]
+        colorCell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
 
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        performSegueWithIdentifier("ShowColor", sender: self)
     }
 
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
