@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00F008141C98FA0900275B08 /* ColorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F008131C98FA0900275B08 /* ColorTableViewCell.swift */; };
+		00F008171C98FD0E00275B08 /* ColorTableViewCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F008151C98FD0E00275B08 /* ColorTableViewCell2.swift */; };
+		00F008181C98FD0E00275B08 /* ColorTableViewCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00F008161C98FD0E00275B08 /* ColorTableViewCell2.xib */; };
 		4D98649B1C98B64A008B98F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D98649A1C98B64A008B98F8 /* AppDelegate.swift */; };
 		4D98649D1C98B64A008B98F8 /* ColorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D98649C1C98B64A008B98F8 /* ColorTableViewController.swift */; };
 		4D98649F1C98B64A008B98F8 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D98649E1C98B64A008B98F8 /* DetailViewController.swift */; };
@@ -16,6 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		00F008131C98FA0900275B08 /* ColorTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorTableViewCell.swift; sourceTree = "<group>"; };
+		00F008151C98FD0E00275B08 /* ColorTableViewCell2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorTableViewCell2.swift; sourceTree = "<group>"; };
+		00F008161C98FD0E00275B08 /* ColorTableViewCell2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ColorTableViewCell2.xib; sourceTree = "<group>"; };
 		4D9864971C98B64A008B98F8 /* ColorTable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorTable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D98649A1C98B64A008B98F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4D98649C1C98B64A008B98F8 /* ColorTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTableViewController.swift; sourceTree = "<group>"; };
@@ -59,10 +65,13 @@
 				4D98649A1C98B64A008B98F8 /* AppDelegate.swift */,
 				4D98649C1C98B64A008B98F8 /* ColorTableViewController.swift */,
 				4D98649E1C98B64A008B98F8 /* DetailViewController.swift */,
+				00F008131C98FA0900275B08 /* ColorTableViewCell.swift */,
 				4D9864A01C98B64A008B98F8 /* Main.storyboard */,
 				4D9864A31C98B64A008B98F8 /* Assets.xcassets */,
 				4D9864A51C98B64A008B98F8 /* LaunchScreen.storyboard */,
 				4D9864A81C98B64A008B98F8 /* Info.plist */,
+				00F008151C98FD0E00275B08 /* ColorTableViewCell2.swift */,
+				00F008161C98FD0E00275B08 /* ColorTableViewCell2.xib */,
 			);
 			path = ColorTable;
 			sourceTree = "<group>";
@@ -125,6 +134,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00F008181C98FD0E00275B08 /* ColorTableViewCell2.xib in Resources */,
 				4D9864A71C98B64A008B98F8 /* LaunchScreen.storyboard in Resources */,
 				4D9864A41C98B64A008B98F8 /* Assets.xcassets in Resources */,
 				4D9864A21C98B64A008B98F8 /* Main.storyboard in Resources */,
@@ -139,6 +149,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D98649F1C98B64A008B98F8 /* DetailViewController.swift in Sources */,
+				00F008171C98FD0E00275B08 /* ColorTableViewCell2.swift in Sources */,
+				00F008141C98FA0900275B08 /* ColorTableViewCell.swift in Sources */,
 				4D98649D1C98B64A008B98F8 /* ColorTableViewController.swift in Sources */,
 				4D98649B1C98B64A008B98F8 /* AppDelegate.swift in Sources */,
 			);
@@ -288,6 +300,7 @@
 				4D9864AD1C98B64A008B98F8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

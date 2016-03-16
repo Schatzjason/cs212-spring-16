@@ -26,9 +26,7 @@ class ColorTableViewController: UITableViewController {
         "Cyan" : UIColor.cyanColor()
     ]
     
-    lazy var colorNames: [String] = {
-        return [String](self.colors.keys)
-    }()
+    var colorNames: [String]!
     
     func generateColorNameArray() -> [String] {
         return [String](self.colors.keys)
@@ -39,6 +37,8 @@ class ColorTableViewController: UITableViewController {
         
         self.navigationItem.leftBarButtonItem = self.editButtonItem()
         colorNames = generateColorNameArray()
+        
+        tableView.registerNib(UINib(nibName: "ColorTableViewCell2", bundle: nil) , forCellReuseIdentifier: "ColorCell2")
     }
 
 
@@ -65,11 +65,17 @@ class ColorTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return colorNames.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier("ColorCell2", forIndexPath: indexPath)
+        let colorCell = cell as! ColorTableViewCell2
+        
+        let colorName = colorNames[indexPath.row]
+
+        colorCell.colorView.backgroundColor = colors[colorName]
 
         return cell
     }
