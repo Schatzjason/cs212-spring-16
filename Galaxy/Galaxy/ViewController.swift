@@ -26,8 +26,12 @@ class ViewController: UIViewController {
     func downloadGalaxy() {
     
         // 1. URL - done
-        
         let url = NSURL(string: GalaxyURL)!
+        
+        // Get UI into waiting mode
+        imageView.hidden = true
+        activityIndicator.hidden = false
+        activityIndicator.startAnimating()
         
         // 2. Create Task that can get our data
         
@@ -45,6 +49,11 @@ class ViewController: UIViewController {
                 // 4. Update UI
                 dispatch_async(dispatch_get_main_queue()) {
                     self.imageView.image = image
+                    
+                    // Get out of waiting mode
+                    self.imageView.hidden = false
+                    self.activityIndicator.hidden = true
+                    self.activityIndicator.stopAnimating()
                 }
             }
         }

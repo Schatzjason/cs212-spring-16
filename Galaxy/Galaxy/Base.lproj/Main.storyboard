@@ -21,16 +21,31 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0Pv-hR-rju">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="fa1-dg-3HA">
+                                <rect key="frame" x="282" y="281" width="37" height="37"/>
+                            </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vdd-vc-bVh">
+                                <rect key="frame" x="283" y="350" width="34" height="30"/>
+                                <state key="normal" title="Start"/>
+                                <connections>
+                                    <action selector="startDowload:" destination="BYZ-38-t0r" eventType="touchDown" id="pHa-7G-Kve"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="0Pv-hR-rju" secondAttribute="bottom" id="7LF-hO-JSE"/>
+                            <constraint firstItem="Vdd-vc-bVh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JBF-iP-v2n"/>
+                            <constraint firstItem="Vdd-vc-bVh" firstAttribute="top" secondItem="fa1-dg-3HA" secondAttribute="bottom" constant="32" id="NwS-Ap-Bf4"/>
+                            <constraint firstItem="fa1-dg-3HA" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Omx-4i-9yq"/>
+                            <constraint firstItem="fa1-dg-3HA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bkd-3K-D8h"/>
                             <constraint firstAttribute="trailingMargin" secondItem="0Pv-hR-rju" secondAttribute="trailing" constant="-20" id="cVj-9Y-yMN"/>
                             <constraint firstItem="0Pv-hR-rju" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="tcx-zu-Yny"/>
                             <constraint firstItem="0Pv-hR-rju" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="vSe-sS-g6E"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="fa1-dg-3HA" id="bWt-HP-Y5e"/>
                         <outlet property="imageView" destination="0Pv-hR-rju" id="glJ-6R-OFr"/>
                     </connections>
                 </viewController>
