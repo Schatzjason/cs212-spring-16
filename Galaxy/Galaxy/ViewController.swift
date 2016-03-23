@@ -17,6 +17,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        imageView.hidden = true
+        activityIndicator.hidden = false
+        activityIndicator.startAnimating()
     }
     
     @IBAction func startDowload(sender: UIButton) {
@@ -33,21 +36,22 @@ class ViewController: UIViewController {
         activityIndicator.hidden = false
         activityIndicator.startAnimating()
         
-        // 2. Create Task that can get our data
+        // 2a. Create Task that can get our data
         
-        let task = NSURLSession.sharedSession().dataTaskWithURL(url)
-        {
+        let task = NSURLSession.sharedSession().dataTaskWithURL(url) {
             
-            data, response, error in
+            (data, response, error) in
             
             assert(error == nil, error!.description)
             
             if let data = data {
-                // 3. Turn data into image
+                // 3. In the future, on separate thread, turn data into image
                 let image = UIImage(data: data)
-            
-                // 4. Update UI
+
+                // 4. Dispatch a closure back to the main thread
                 dispatch_async(dispatch_get_main_queue()) {
+
+                    // In the even more distant future, back on the main thread, update UI
                     self.imageView.image = image
                     
                     // Get out of waiting mode
@@ -58,7 +62,7 @@ class ViewController: UIViewController {
             }
         }
         
-        // Start the task working....
+        // 2b. Start the task working....
         task.resume()
         
 
