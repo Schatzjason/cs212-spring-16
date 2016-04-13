@@ -27,11 +27,11 @@ struct Movie {
 
 extension Movie {
     /**
-        posterImage is a computed property. From outside of the struct it should look like objects
-        have a direct handle to their image. In fact, they store them in an imageCache. The
-        cache stores the images into the documents directory, and keeps a resonable number of
-        them in memory.
-    */
+     posterImage is a computed property. From outside of the struct it should look like objects
+     have a direct handle to their image. In fact, they store them in an imageCache. The
+     cache stores the images into the documents directory, and keeps a resonable number of
+     them in memory.
+     */
     
     var posterImage: UIImage? {
         

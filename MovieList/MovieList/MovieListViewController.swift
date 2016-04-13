@@ -110,10 +110,47 @@ class MovieListViewController: UIViewController, UITableViewDataSource, UITableV
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell")!
         
-        let movie = movies[indexPath.row]
+        var movie = movies[indexPath.row]
         
         cell.textLabel!.text = movie.title
-        cell.imageView!.image = UIImage(named: "placeHolder")
+        
+        // Set the placeholder
+        
+        if movie.posterPath == nil {
+            // api node has no imagepath
+            cell.imageView!.image = UIImage(named: "noImage")
+        } else if let image = movie.posterImage {
+            // already cached
+            cell.imageView!.image = image
+            print("Image for \(movie.title) already cached")
+        } else {
+            // Set a placeholder before we start the download
+            cell.imageView!.image = UIImage(named: "placeHolder")
+        
+            // get url, 
+            let url = TMDBURLs.URLForPosterWithPath(movie.posterPath!)
+
+            // create task
+            let task = NSURLSession.sharedSession().dataTaskWithURL(url) {
+                data, response, error in
+
+                if let error = error {
+                    print(error)
+                }
+
+                if let data = data, image = UIImage(data: data) {
+                    dispatch_async(dispatch_get_main_queue()) {
+                        cell.imageView!.image = image
+                    }
+                    movie.posterImage = image
+                    print("caching \(movie.title)")
+                }
+            }
+            
+            // resume task
+            task.resume()
+            
+        }
         
         return cell
     }
@@ -133,6 +170,12 @@ class MovieListViewController: UIViewController, UITableViewDataSource, UITableV
         // Print the object, for now, so we can take a look
         print(JSONDictionary)
         
-        return [Movie]()
+        let movieDictionaries = JSONDictionary[TMDB.Keys.Results] as! [[String : AnyObject]]
+        
+        let movies = movieDictionaries.map() {
+            Movie(dictionary: $0)
+        }
+        
+        return movies
     }
 }
