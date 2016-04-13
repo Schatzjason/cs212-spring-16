@@ -107,8 +107,14 @@ class MovieListViewController: UIViewController, UITableViewDataSource, UITableV
         return movies.count
     }
     
+    var cellNumber = 0
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell")!
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell") as! TaskAwareTableViewCell
+        
+        cell.cellNumber = cellNumber++
+        
+        print("Using Cell: \(cell.cellNumber)")
         
         var movie = movies[indexPath.row]
         
@@ -148,6 +154,7 @@ class MovieListViewController: UIViewController, UITableViewDataSource, UITableV
             }
             
             // resume task
+            cell.taskToCancelWhenReused = task
             task.resume()
             
         }
