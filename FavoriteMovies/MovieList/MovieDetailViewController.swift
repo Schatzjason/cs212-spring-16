@@ -17,10 +17,14 @@ class MovieDetailViewController : UIViewController {
     @IBOutlet weak var overviewTextView: UITextView!
     @IBOutlet weak var favoriteButton: UIButton!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        favoriteMovies = (UIApplication.sharedApplication().delegate as! AppDelegate).favoriteMovies
+    }
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
-        favoriteMovies = (UIApplication.sharedApplication().delegate as! AppDelegate).favoriteMovies
         
         configureUI()
     }
@@ -29,12 +33,15 @@ class MovieDetailViewController : UIViewController {
         navigationItem.title = movie.title
         posterImageView.image = movie.posterImage
         overviewTextView.text = movie.overview
+        
+        let name = favoriteMovies.contains(movie) ? "favorite" : "not-favorite"
+        favoriteButton.setImage(UIImage(named: name), forState: .Normal)
+        
+        print(movie.JSONForm)
     }
     
     @IBAction func toggleFavorite(sender: UIButton) {
-        let isFavorite = favoriteMovies.toggle(movie)
-        let name = isFavorite ? "favorite" : "not-favorite"
-        
-        favoriteButton.setImage(UIImage(named: name), forState: .Normal)
+        favoriteMovies.toggle(movie)
+        configureUI()
     }
 }

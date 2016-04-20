@@ -10,7 +10,7 @@ import UIKit
 
 class MovieFavoritesViewController : UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    weak var favoriteMovies: MovieList!
+    var favoriteMovies: MovieList!
     @IBOutlet weak var tableView: UITableView!
     
     override func viewWillAppear(animated: Bool) {
@@ -38,13 +38,11 @@ class MovieFavoritesViewController : UIViewController, UITableViewDelegate, UITa
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         
-        guard editingStyle == .Delete else {
-            return
-        }
-        
-        // Remove  movie from the model
+        // Remove movie from the model
+        favoriteMovies.removeAtIndex(indexPath.row)
         
         // Remove row from table
+        tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Left)
     }
 }
 

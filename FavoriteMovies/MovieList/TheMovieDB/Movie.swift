@@ -29,6 +29,25 @@ struct Movie {
 }
 
 extension Movie {
+    
+    var JSONForm: AnyObject {
+        get {
+            var d: [String : AnyObject] = [
+                Keys.Title : self.title,
+                TMDB.Keys.ID : self.id,
+                Keys.Overview : self.overview
+            ]
+            
+            if let path = posterPath {
+                d[Keys.PosterPath] = path
+            }
+            
+            return d
+        }
+    }
+}
+
+extension Movie {
     /**
      posterImage is a computed property. From outside of the struct it should look like objects
      have a direct handle to their image. In fact, they store them in an imageCache. The
