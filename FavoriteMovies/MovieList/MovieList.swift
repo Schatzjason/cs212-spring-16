@@ -111,7 +111,7 @@ extension MovieList {
         let arrayOfDictionaries = j as! [[String : AnyObject]]
         
         // make array of movies
-        return arrayOfDictionaries.map() {return Movie(dictionary: $0)}
+        return arrayOfDictionaries.map() {return Movie(JSONObject: $0)!}
     }
     
     private var fileURL: NSURL {

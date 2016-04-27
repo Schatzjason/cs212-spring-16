@@ -19,16 +19,9 @@ struct Movie {
     var id = 0
     var posterPath: String? = nil
     var overview = ""
-    
-    init(dictionary: [String : AnyObject]) {
-        title = dictionary[Keys.Title] as! String
-        id = dictionary[TMDB.Keys.ID] as! Int
-        posterPath = dictionary[Keys.PosterPath] as? String
-        overview = dictionary[Keys.Overview] as! String
-    }
 }
 
-extension Movie {
+extension Movie : Archivable {
     
     var JSONForm: AnyObject {
         get {
@@ -44,6 +37,23 @@ extension Movie {
             
             return d
         }
+    }
+    
+    init?(JSONObject: AnyObject) {
+        
+        guard let dictionary = JSONObject as? [String : AnyObject],
+                    title = dictionary[Keys.Title] as? String,
+                    id = dictionary[TMDB.Keys.ID] as? Int,
+                    overview = dictionary[Keys.Overview] as? String
+        else {
+            return nil
+        }
+        
+        self.title = title
+        self.id = id
+        self.overview = overview
+
+        posterPath = dictionary[Keys.PosterPath] as? String
     }
 }
 

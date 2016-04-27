@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		001EBF491CD05AF200F0F825 /* JSONTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001EBF481CD05AF200F0F825 /* JSONTools.swift */; };
 		004F05D91CBDF12500706AE6 /* TaskAwareTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004F05D81CBDF12500706AE6 /* TaskAwareTableViewCell.swift */; };
 		00A5A94F1BE2F62B00B54B94 /* MovieSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A5A94E1BE2F62B00B54B94 /* MovieSearchViewController.swift */; };
 		4D1D8F741CC56F85005826F5 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1D8F731CC56F85005826F5 /* MovieDetailViewController.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		001EBF481CD05AF200F0F825 /* JSONTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONTools.swift; sourceTree = "<group>"; };
 		004F05D81CBDF12500706AE6 /* TaskAwareTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskAwareTableViewCell.swift; sourceTree = "<group>"; };
 		00A5A94E1BE2F62B00B54B94 /* MovieSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieSearchViewController.swift; sourceTree = "<group>"; };
 		4D1D8F731CC56F85005826F5 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 		4DE079281BE2BF3C007C65AF /* MovieList */ = {
 			isa = PBXGroup;
 			children = (
+				001EBF481CD05AF200F0F825 /* JSONTools.swift */,
 				004F05D81CBDF12500706AE6 /* TaskAwareTableViewCell.swift */,
 				4D1D8F731CC56F85005826F5 /* MovieDetailViewController.swift */,
 				4D1D8F771CC5A6B6005826F5 /* MoviesFavoritesListViewController.swift */,
@@ -179,6 +182,7 @@
 				4D8B05071BE2C87800CF1A56 /* TMDB.swift in Sources */,
 				4D8B05091BE2C87800CF1A56 /* TMDBURLs.swift in Sources */,
 				4D1D8F781CC5A6B6005826F5 /* MoviesFavoritesListViewController.swift in Sources */,
+				001EBF491CD05AF200F0F825 /* JSONTools.swift in Sources */,
 				00A5A94F1BE2F62B00B54B94 /* MovieSearchViewController.swift in Sources */,
 				004F05D91CBDF12500706AE6 /* TaskAwareTableViewCell.swift in Sources */,
 				4D8B05061BE2C87800CF1A56 /* Person.swift in Sources */,

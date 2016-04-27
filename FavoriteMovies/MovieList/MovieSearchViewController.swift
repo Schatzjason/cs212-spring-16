@@ -190,7 +190,7 @@ class MovieSearchViewController: UIViewController, UITableViewDataSource, UITabl
         let movieDictionaries = JSONDictionary[TMDB.Keys.Results] as! [[String : AnyObject]]
         
         let movies = movieDictionaries.map() {
-            Movie(dictionary: $0)
+            Movie(JSONObject: $0)!
         }
         
         return movies
